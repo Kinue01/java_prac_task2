@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.example.prac2.controller.Mr231_VHWController"
+          vgap="10"
+          hgap="10">
+    <VBox GridPane.columnIndex="0" alignment="CENTER" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Дата и время записи:" />
+            <TextField fx:id="recTime" />
+        </HBox>
+        <Label text="Формат: год-месяц-день часы:минуты:секунды[.миллисекунды]" />
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Курс:" />
+            <TextField fx:id="cource" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Скорость:" />
+            <TextField fx:id="speed"  />
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.columnIndex="1" alignment="CENTER" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <ListView fx:id="list" minWidth="600" onMouseClicked="#onListViewMouseClick" />
+    </VBox>
+
+    <VBox GridPane.rowIndex="1" GridPane.columnSpan="2" alignment="CENTER" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <Button text="Отправить" onAction="#onSendMessageButton" />
+    </VBox>
+</GridPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="org.example.prac2.controller.Mr231_RSDController"
+          alignment="CENTER"
+          vgap="10"
+          hgap="10">
+
+    <VBox GridPane.columnIndex="0" alignment="CENTER" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Дата и время записи:" />
+            <TextField fx:id="recTime" />
+        </HBox>
+        <Label text="Формат: год-месяц-день часы:минуты:секунды[.миллисекунды]" />
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Начальное расстояние:" />
+            <TextField fx:id="initialDistance" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Начальный пеленг:" />
+            <TextField fx:id="initialBearing" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Подвижный круг дальности:" />
+            <TextField fx:id="movingCircleOfDistance" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Пеленг 1:" />
+            <TextField fx:id="bearing" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Дальность от своего корабля:" />
+            <TextField fx:id="distanceFromShip" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Пеленг:" />
+            <TextField fx:id="bearing2" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Шкала дальности:" />
+            <TextField fx:id="distanceScale" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Единицы измерения расстояния:" />
+            <ComboBox fx:id="distanceUnit" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Ориентация дисплея:" />
+            <ComboBox fx:id="displayOrientation" />
+        </HBox>
+
+        <HBox spacing="15.0" alignment="CENTER">
+            <Label text="Режим работы НРЛС:" />
+            <ComboBox fx:id="workingMode" />
+        </HBox>
+    </VBox>
+
+    <VBox GridPane.columnIndex="1" alignment="CENTER" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <ListView fx:id="list" minWidth="800" onMouseClicked="#onListViewMouseClick" />
+    </VBox>
+
+    <VBox GridPane.rowIndex="1" GridPane.columnSpan="2" alignment="CENTER" spacing="20.0">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        </padding>
+
+        <Button text="Отправить" onAction="#onSendMessageButton" />
+    </VBox>
+
+</GridPane>
